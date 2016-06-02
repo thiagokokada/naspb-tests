@@ -11,7 +11,7 @@ popd
 wget http://tau.uoregon.edu/tau.tgz
 tar xf tau.tgz
 pushd tau-*
-./configure -cc=mpicc -c++=mpiCC -fortran=mpif77 -useropt='-O3 -mcmodel=medium' \
+./configure -cc=mpicc -c++=mpiCC -fortran=mpif90 \
   -mpi -openmp \
   -MPITRACE -PROFILE -TRACE \
   -pdt="${TAU_PATH}" \
