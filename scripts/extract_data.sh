@@ -18,11 +18,11 @@ extract_data() {
         mkdir "${dir}"
         pushd "${dir}"
         echo "Decompressing ${tarxz}"
-        tar -xf ${tarxz}
+        tar -xf ${tarxz} --wildcards --no-anchored '*.log'
         "${SCRIPT_DIR}/filter_data.sh"
         echo "Cleaning extra files"
-        find -type f ! -name '*.data' -delete
-        find -type d -delete
+        find -type f ! -name '*.log' -delete
+        find -type d -empty -delete
         popd
       else
         echo "Directory ${dir} already exists, skipping"
