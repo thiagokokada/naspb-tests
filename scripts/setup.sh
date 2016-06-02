@@ -8,4 +8,4 @@ fi
 
 export DEBIAN_FRONTEND=noninteractive
 apt-get update
-apt-get install -y build-essential gfortran openmpi-bin libopenmpi-dev tmux htop git sysstat
+apt-get install -y build-essential binutils-dev gfortran openmpi-bin libopenmpi-dev tmux htop git sysstat
