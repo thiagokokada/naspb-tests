@@ -22,4 +22,4 @@ run_bench sp "${class}" x
 run_bench bt "${class}" x
 
 source ${DIR}/../email_setup.sh
-python2 ${DIR}/../send_email.py -s "${SENDER_EMAIL}" -w "${SENDER_PASSWORD}" -m "${SMTP_SERVER}" "NASPB-MPI-TAU finished" "At `date`, NASPB-MPI-TAU benchmarks finished to run in `hostname`."
+python2 ${DIR}/../send_email.py -s "${SENDER_EMAIL}" -w "${SENDER_PASSWORD}" -m "${SMTP_SERVER}" "NASPB-OPENMP-TAU finished" "At `date`, NASPB-OPENMP-TAU benchmarks finished to run in `hostname`."
