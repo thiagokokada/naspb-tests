@@ -1,5 +1,8 @@
 #!/bin/bash
 
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+source ${DIR}/../common_mpi.sh
+
 run_bench() {
   local bench="${1}"
   local class="${2}"
