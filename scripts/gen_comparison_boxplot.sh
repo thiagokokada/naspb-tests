@@ -13,7 +13,8 @@ SIZE=`sed 's/[^A-Z]//g' ${2}`
 
 GNUPLOT_SCRIPT="
 # set term pngcairo size 800,600 enhanced font 'Verdana, 14'
-set term svg size 800,600 enhanced font 'Verdana, 14' background rgb 'white'
+# set term svg size 800,600 enhanced font 'Verdana, 14' background rgb 'white'
+set terminal epscairo size 8,6 enhanced color font 'Helvetica,20' linewidth 2
 set style data boxplot
 set output \""${OUTFILE}"\"
 
@@ -21,7 +22,7 @@ set title \"${TITLE}\"
 set xlabel \"Experiment\"
 set ylabel \"Time(s)\"
 set xrange [:]
-set yrange [:]
+set yrange [0:450]
 set grid
 set xtics rotate by 30 right
 unset key

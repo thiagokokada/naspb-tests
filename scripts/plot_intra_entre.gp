@@ -1,4 +1,4 @@
-set terminal epscairo size 3.5,2.62 enhanced color font 'Helvetica, 14' linewidth 1.5
+set terminal epscairo size 8,6 enhanced color font 'Helvetica, 20' linewidth 2
 set encoding utf8
 
 set title "Comunicação Intra-nós X Entre-nós"
