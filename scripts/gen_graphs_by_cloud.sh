@@ -24,7 +24,7 @@ gen_graph() {
 gen_graphs() {
   for cloud in ${CLOUD}; do
     for size in ${SIZES}; do
-      gen_graph "NPB3.3.1-MPI" lu "${size}" 32
+      gen_graph "NPB3.3.1-MPI" lu "${size}" 32 "${cloud}"
       for benchmark in bt sp; do
         for nprocs in 25 36; do
           gen_graph "NPB3.3.1-MPI" "${benchmark}" "${size}" "${nprocs}" "${cloud}"
