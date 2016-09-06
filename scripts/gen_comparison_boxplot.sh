@@ -1,15 +1,16 @@
 #!/bin/bash
 
 if [ -z "${1}" ] || [ -z "${2}" ]; then
-  echo "usage: ${0} OUTFILE DATA_FILE [[DATA_FILE]...]" 1>&2
+  echo "usage: ${0} YRANGE OUTFILE DATA_FILE [[DATA_FILE]...]" 1>&2
   exit 1
 fi
 
-OUTFILE="${1}"
+YRANGE="${1}"
+OUTFILE="${2}"
 shift
-TITLE="${1}"
+TITLE="${2}"
 shift
-SIZE=`sed 's/[^A-Z]//g' ${2}`
+SIZE=`sed 's/[^A-Z]//g' ${3}`
 
 GNUPLOT_SCRIPT="
 # set term pngcairo size 800,600 enhanced font 'Verdana, 14'
@@ -22,7 +23,7 @@ set title \"${TITLE}\"
 set xlabel \"Experiment\"
 set ylabel \"Time(s)\"
 set xrange [:]
-set yrange [0:450]
+set yrange ["${YRANGE}"]
 set grid
 set xtics rotate by 30 right
 unset key

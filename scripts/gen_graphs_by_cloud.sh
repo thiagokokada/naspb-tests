@@ -2,7 +2,8 @@
 
 DATA_DIR="${1}"
 #SIZES="A B C D"
-SIZES="A"
+SIZES="C"
+YRANGE="20:600"
 CLOUD="GCE hydra revoada"
 SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 CURRENT_DIR=`pwd`
@@ -17,7 +18,7 @@ gen_graph() {
   data_name=${benchmark}.${size}.${nprocs}
   data=`find -type f -path "*${cloud}*${data_name}.data" | sort -V | tr '\n' ' '`
   echo "Generating ${cloud}.${comm_type}.${data_name}.eps"
-  "${SCRIPT_DIR}/gen_comparison_boxplot.sh" "${CURRENT_DIR}/`echo ${cloud}.${comm_type}.${data_name} | sed 's/\./_/g'`.eps" ${data_name} ${data}
+  "${SCRIPT_DIR}/gen_comparison_boxplot.sh" "${YRANGE}" "${CURRENT_DIR}/`echo ${cloud}.${comm_type}.${data_name} | sed 's/\./_/g'`.eps" ${data_name} ${data}
   echo
 }
 

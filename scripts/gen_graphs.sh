@@ -2,7 +2,8 @@
 
 DATA_DIR="${1}"
 #SIZES="A B C D"
-SIZES="A"
+SIZES="C"
+YRANGE="0:450"
 SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 CURRENT_DIR=`pwd`
 
@@ -15,7 +16,7 @@ gen_graph() {
   data_name=${benchmark}.${size}.${nprocs}
   data=`find -type f -name "${data_name}.data" | sort -V | tr '\n' ' '`
   echo "Generating ${comm_type}.${data_name}.eps"
-  "${SCRIPT_DIR}/gen_comparison_boxplot.sh" "${CURRENT_DIR}/`echo ${comm_type}.${data_name} | sed 's/\./_/g'`.eps" ${data_name} ${data}
+  "${SCRIPT_DIR}/gen_comparison_boxplot.sh" "${YRANGE}" "${CURRENT_DIR}/`echo ${comm_type}.${data_name} | sed 's/\./_/g'`.eps" ${data_name} ${data}
   echo
 }
 
